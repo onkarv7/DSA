@@ -1,0 +1,31 @@
+// sum zero problem 
+// [-5,-4,-3,-2,0,2,4,6,8] input
+
+// Output [] => [-4 , 4]
+
+function getSumPairZero (array) {
+  // to get each element for comparison we need Loop
+  for (let number of array){
+// console.log('outer loop')
+    // we get all the numbers 
+    // console.log(number)
+    // (Itteration) loop 2 for checking
+    for (let j = 1; j < array.length; j++){
+      // console.log('inner loop')
+      // conditon check (conditional rendering)
+      
+      if ( number + array[j] === 0){
+        return [ number, array[j]]
+        // output is in array 
+      }
+    }
+  }
+  
+}
+// since we are returning we need to store result
+const result =getSumPairZero([-5,-4,-3,-2,0,2,4,6,8])
+console.log( 'Result',  result)
+
+
+// to get time complexity we use Outer loop and inner loop 
+// Time complexity O(n^2)
