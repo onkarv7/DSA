@@ -1,0 +1,30 @@
+// string1 = 'onkar'
+// string2 = 'rkaon'
+// string1 length = string2 length
+// map / loop string1 => {o:1, n:1, k:1, a:1, r:1}
+// loop string2 and minimize string1 count
+
+function isAnagram (string1, string2){
+  if(string1.length !== string2.length){
+    return false;
+  }
+  
+  let counter = {};
+  for(let letter of string1){
+    // console.log(letter);
+    counter[letter] = (counter[letter] || 0 ) + 1;
+    // console.log(counter[letter])
+    // counter is undefined so we take 0 
+  }
+  
+  for (let items of string2){
+    if(!counter[items]){
+      return false;
+    }
+    counter[items] = counter[items] - 1;
+  }
+  return true
+  
+}
+const result = isAnagram('onkar','rkaon')
+console.log(result)
