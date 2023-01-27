@@ -1,0 +1,12 @@
+function longestCommonSubstring(str1, str2) {
+  if (!str1 || !str2) return "";
+  if (str1[str1.length - 1] === str2[str2.length - 1]) {
+    return longestCommonSubstring(str1.slice(0, -1), str2.slice(0, -1)) + str1[str1.length - 1];
+  } else {
+    const lcs1 = longestCommonSubstring(str1, str2.slice(0, -1));
+    const lcs2 = longestCommonSubstring(str1.slice(0, -1), str2);
+    return (lcs1.length > lcs2.length) ? lcs1 : lcs2;
+  }
+}
+console.log(longestCommonSubstring('abcd','abc'))
+console.log(longestCommonSubstring('pjstf','jst'))
