@@ -1,0 +1,14 @@
+// Given a string , reverse each word in as string
+// str => array => loop array => reverse => string
+
+/*  Approch
+const str = "How are you"
+str.split(" ").reverse().join(" ")
+*/
+
+let savedArray = str.split(" ").map((word) => {
+  console.log(word)
+  return word.split("").reverse().join("")
+})
+savedArray.join(" ")
+
