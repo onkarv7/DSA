@@ -1,0 +1,8 @@
+// How to check if it is an array
+// typeof will give object in both the cases
+
+const checkArray = (item) => {
+  return Array.isArray(item)
+  // console.log(item)
+}
+console.log(checkArray([1,2,34]))
